@@ -28,7 +28,7 @@ const teacherRoutes = [
     href: "/teacher/analytics"
   }
 ]
-const SidebarRoutes = () => {
+const SidebarRoutes = ({ setOpen }: { setOpen?: (open: boolean) => void }) => {
   const pathname = usePathname()
   const isTeacherPage = pathname?.includes("/teacher");
 
@@ -41,6 +41,7 @@ const SidebarRoutes = () => {
           icon={route.icon}
           label={route.label}
           href={route.href}
+          setOpen={setOpen}
         />
       )
       )}

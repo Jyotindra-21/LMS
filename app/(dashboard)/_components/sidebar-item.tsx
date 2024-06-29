@@ -10,23 +10,26 @@ interface SidebarItemProps {
     icon: LucideIcon;
     label: string;
     href: string;
+    setOpen?: (open: boolean) => void;
 }
 
 export const SidebarItem = ({
     icon: Icon,
     label,
-    href
+    href,
+    setOpen
 }: SidebarItemProps) => {
 
     const pathname = usePathname()
     const router = useRouter()
 
     const isActive = (pathname === "/" && href === "/") ||
-    (pathname !== "/" && pathname === href) ||
-    (pathname?.startsWith(`${href}`) && href !== "/");
-    
+        (pathname !== "/" && pathname === href) ||
+        (pathname?.startsWith(`${href}`) && href !== "/");
+
 
     const onClick = () => {
+        setOpen?.(false);
         router.push(href);
     }
     return (
@@ -43,7 +46,7 @@ export const SidebarItem = ({
                 <Icon size={22} className={cn("text-slate-500", isActive && "text-sky-700")} />
                 {label}
             </div>
-            <div  className={cn("ml-auto opacity-0 border-2 border-sky-700 h-full transition-all" , isActive && "opacity-100")} />
+            <div className={cn("ml-auto opacity-0 border-2 border-sky-700 h-full transition-all", isActive && "opacity-100")} />
         </button>
     );
 }
