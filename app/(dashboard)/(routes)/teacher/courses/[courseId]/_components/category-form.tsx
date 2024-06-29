@@ -64,7 +64,7 @@ export const CategoryForm = ({ initialData, courseId, options }: CategoryFormPro
     // console.log(options);
 
     return (
-        <div className="mt-6 border bg-slate-100 rounded-md p-4">
+        <div className="mt-6 border bg-slate-100 rounded-md p-4 dark:bg-slate-900">
             <div className="font-medium flex items-center justify-between">
                 Course category
                 <Button onClick={toggleEdit} variant="ghost">

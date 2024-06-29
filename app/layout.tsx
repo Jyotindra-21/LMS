@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ToastProvider } from "@/components/providers/toast-provider";
 import { ConfettiProvider } from "@/components/providers/confetti-provider";
+import { ThemesProvider } from "@/components/providers/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,12 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body className={inter.className}>
-          <ConfettiProvider />
-          <ToastProvider/>
-          {children}
-          </body>
+          <ThemesProvider>
+            <ConfettiProvider />
+            <ToastProvider />
+            {children}
+          </ThemesProvider>
+        </body>
       </html>
     </ClerkProvider>
   );

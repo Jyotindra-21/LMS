@@ -49,7 +49,7 @@ export const CourseCard = ({ id,
                                 size={"sm"}
                                 icon={BookOpen}
                             />
-                            <span>
+                            <span className="ml-2">
                                 {chaptersLength} {chaptersLength === 1 ? "Chapter" : "Chapters"}
                             </span>
                         </div>

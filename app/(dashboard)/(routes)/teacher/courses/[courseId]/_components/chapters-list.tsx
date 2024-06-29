@@ -72,7 +72,7 @@ export const ChaptersList = ({ items, onEdit, onReorder }: ChaptersListProps) =>
                                 >
                                     {(provided) => (
                                         <div className={cn(
-                                            "flex items-center gap-x-2 bg-slate-200 border-slate-200 border text-slate-700 rounded-md mb-4 text-sm ",
+                                            "flex items-center gap-x-2 bg-slate-200 border-slate-200 dark:border-slate-700 border dark:text-white/80 text-slate-700 rounded-md mb-4 text-sm dark:bg-slate-700",
                                             chapter.isPublished && "bg-sky-100 border-sky-200 text-sky-700"
                                         )}
                                             ref={provided.innerRef}
